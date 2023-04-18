@@ -1,0 +1,37 @@
+﻿OBJETIVO: otimizar o controle de estoque de remédios dos postos de saúde de Lages para facilitar e agilizar o 
+processo de distribuição de medicamentos aos pacientes.
+
+- Necessidades do cliente:
+Controlar o estoque de remédios dos postos de saúde.
+Armazenar as informações das quantidades de remédios disponíveis nos estoques.
+Permitir a atualização da quantidade de remédios quando entregue ao paciente.
+Registrar novos remédios no estoque.
+Disponibilizar informações sobre nome, descrição e quantidade de remédios disponíveis.
+Visualizar medicamentos com poucas quantidades no estoque.
+Solicitar a reposição de medicamentos junto a um fornecedor cadastrado no sistema.
+Apresentar os medicamentos mais retirados pela comunidade.
+Identificar os medicamentos que estão em falta.
+
+- Requisitos do sistema:
+O sistema deve permitir o registro e controle do estoque de remédios.
+O sistema deve permitir a atualização da quantidade de remédios quando entregue ao paciente e registrar novos remédios no estoque.
+O nome, descrição e quantidade de remédios disponíveis devem ser facilmente acessíveis.
+O sistema deve permitir a visualização dos medicamentos com poucas quantidades no estoque e enviar solicitações de reposição de medicamentos 
+junto a fornecedores cadastrados no sistema.
+Deve ser capaz de identificar os medicamentos mais retirados pela comunidade e aqueles que estão em falta.
+
+
+- Funcionalidades do sistema:
+Registro e controle do estoque de remédios dos postos de saúde de Lages.
+Atualização da quantidade de remédios quando entregue ao paciente e registro de novos remédios no estoque.
+Visualização do nome, descrição e quantidade de remédios disponíveis.
+Identificação dos medicamentos com poucas quantidades no estoque.
+Envio de solicitações de reposição de medicamentos junto a fornecedores cadastrados no sistema.
+Identificação dos medicamentos mais retirados pela comunidade e daqueles que estão em falta.
+Atualização da quantidade de remédios quando entregue ao paciente e registro de novos remédios no estoque.
+Visualização do nome, descrição e quantidade de remédios disponíveis.
+Identificação dos medicamentos com poucas quantidades no estoque.
+Envio de solicitações de reposição de medicamentos junto a fornecedores cadastrados no sistema.
+Identificação dos medicamentos mais retirados pela comunidade e daqueles que estão em falta.
+
+- Arquitetura do sistema:
