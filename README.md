@@ -3,7 +3,7 @@
 Controle de Medicamentos dos Postos de Saúde
 </h1>
 <br>
-<br>
+
 ## ❌ O problema:
 Com a necessidade de controlar os estoques das farmácias dos postos de saúde de Lages, foi proposto pelo secretário da saúde João do Nascimento, a criação de um `sistema` simples para a `gestão do estoque de remédios` dos postos de saúde de Lages, para assim atender melhor a população nos bairros.
 
