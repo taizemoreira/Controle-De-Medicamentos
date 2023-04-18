@@ -6,7 +6,7 @@
 ## ❌ O problema:
 Com a necessidade de controlar os estoques das farmácias dos postos de saúde de Lages, foi proposto pelo secretário da saúde João do Nascimento, a criação de um `sistema` simples para a `gestão do estoque de remédios` dos postos de saúde de Lages, para assim atender melhor a população nos bairros.
 
-Eles desejam otimizar o controle de estoque das farmácias para facilitar e agilizar o processo de distribuição de remédios aos pacientes.
+Eles desejam otimizar o controle de estoque das farmácias para facilitar e agilizar o processo de distribuição de remédios aos pacientes.<br>
 Os postos utilizam formulários de papel para armazenar as informações das quantidades de remédios disponíveis nos estoques.
 
 Atualmente, os pacientes requisitam um medicamento e ao fazer a requisição o funcionário do posto verifica a disponibilidade do medicamento no sistema e caso o mesmo esteja disponível o atendente dá baixa no sistema (atualiza a quantidade) e entrega o medicamento ao paciente que já esteja cadastrado.
