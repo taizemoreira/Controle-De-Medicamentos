@@ -34,4 +34,3 @@ Identificação dos medicamentos com poucas quantidades no estoque.
 Envio de solicitações de reposição de medicamentos junto a fornecedores cadastrados no sistema.
 Identificação dos medicamentos mais retirados pela comunidade e daqueles que estão em falta.
 
-- Arquitetura do sistema:
