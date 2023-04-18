@@ -1,5 +1,5 @@
 <h1 align="center">
-☢<br>
+🩺<br>
 Controle de Medicamentos dos Postos de Saúde
 </h1>
 <br>
