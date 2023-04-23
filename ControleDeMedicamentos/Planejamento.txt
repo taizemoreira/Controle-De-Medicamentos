@@ -2,15 +2,15 @@
 processo de distribuição de medicamentos aos pacientes.
 
 - Necessidades do cliente:
-Controlar o estoque de remédios dos postos de saúde.
-Armazenar as informações das quantidades de remédios disponíveis nos estoques.
-Permitir a atualização da quantidade de remédios quando entregue ao paciente.
-Registrar novos remédios no estoque.
-Disponibilizar informações sobre nome, descrição e quantidade de remédios disponíveis.
-Visualizar medicamentos com poucas quantidades no estoque.
-Solicitar a reposição de medicamentos junto a um fornecedor cadastrado no sistema.
-Apresentar os medicamentos mais retirados pela comunidade.
-Identificar os medicamentos que estão em falta.
+ok Controlar o estoque de remédios dos postos de saúde.
+ok Armazenar as informações das quantidades de remédios disponíveis nos estoques.
+ok Permitir a atualização da quantidade de remédios quando entregue ao paciente.
+ok Registrar novos remédios no estoque.
+ok Disponibilizar informações sobre nome, descrição e quantidade de remédios disponíveis.
+ok Visualizar medicamentos com 5 ou menos quantidades no estoque.
+ok Solicitar a reposição de medicamentos junto a um fornecedor cadastrado no sistema.
+ok Apresentar os medicamentos mais retirados pela comunidade.
+ok Identificar os medicamentos que estão em falta.
 
 - Requisitos do sistema:
 O sistema deve permitir o registro e controle do estoque de remédios.
