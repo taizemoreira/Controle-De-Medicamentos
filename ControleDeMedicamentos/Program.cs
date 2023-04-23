@@ -2,6 +2,7 @@
 using ControleDeMedicamentos.Negocios;
 using System;
 using System.Xml;
+using ControleDeMedicamentos.DAO;
 
 namespace NomeDoProjeto
 {
@@ -36,23 +37,24 @@ namespace NomeDoProjeto
 
             // Criando um objeto da classe Estoque
             // Controlar o estoque de remédios dos postos de saúde.
+            EstoqueDAO estoqueDAO = new EstoqueDAO(listaDeMedicamentos);
             Estoque estoque = new Estoque(listaDeMedicamentos);
-            estoque.AdicionarMedicamento(medicamento1);
-            estoque.AdicionarMedicamento(medicamento2);
+            estoqueDAO.AdicionarMedicamento(medicamento1);
+            estoqueDAO.AdicionarMedicamento(medicamento2);
 
 
             // Permitir a atualização da quantidade limite do medicamento "Vick-vaporub"
             medicamento2.QuantidadeLimiteMedicamento = 61;
-            estoque.AtualizarMedicamento(medicamento2);
+            estoqueDAO.AtualizarMedicamento(medicamento2);
 
             // Registrar novos remédios no estoque.
             // Disponibilizar informações sobre nome, descrição e quantidade de remédios disponíveis.
             Medicamento medicamento3 = new Medicamento(3, "Neosaldina", "Neosaldina é um medicamento com atividade analgésica (diminui a dor) e antiespasmódica.", 23, minhaListaRequisicao, 67, 10, fornecedor);
             Medicamento medicamento4 = new Medicamento(4, "Dipirona", "A Dipirona é um derivado pirazolônico não narcótico com efeitos analgésico, antipirético e espasmolítico.", 23, minhaListaRequisicao, 67, 10, fornecedor);
             Medicamento medicamento5 = new Medicamento(5, "Buscopan", "Buscopan Composto age sobre as contrações dolorosas e aliviando de forma rápida e prolongada as cólicas, dores e desconfortos abdominais. \r\n\r\n ", 23, minhaListaRequisicao, 67, 10, fornecedor);
-            estoque.AdicionarMedicamento(medicamento3);
-            estoque.AdicionarMedicamento(medicamento4);
-            estoque.AdicionarMedicamento(medicamento5);
+            estoqueDAO.AdicionarMedicamento(medicamento3);
+            estoqueDAO.AdicionarMedicamento(medicamento4);
+            estoqueDAO.AdicionarMedicamento(medicamento5);
 
             // Visualizar medicamentos com poucas quantidades no estoque.
             estoque.ListarMedicamentosComPoucasQuantidades(5);
@@ -69,20 +71,23 @@ namespace NomeDoProjeto
             estoque.ListarMedicamentosEmFalta();
 
             // Cadatrar paciente
-            Paciente pacientes = new Paciente();
+            PacienteDAO pacienteDAO = new PacienteDAO();
             Paciente paciente1 = new Paciente(1, "João", "02344345780", "Rua Anastacio Ramos", "88970059", "fornecedortop@hotmail.com");
-            pacientes.AdicionarPaciente(paciente1);
+            pacienteDAO.AdicionarPaciente(paciente1);
 
             // Editar paciente
             paciente1.NomePaciente = "José";
             paciente1.CpfPaciente = "08978965700";
-            pacientes.AtualizarPaciente(paciente1);
+            pacienteDAO.AtualizarPaciente(paciente1);
 
             // Consulta paciente
-            pacientes.ConsultarPaciente(1);
+            pacienteDAO.ConsultarPaciente(1);
 
-            // Excluir paciente      
-            pacientes.RemoverPaciente(1);
+            // Excluir paciente
+            pacienteDAO.RemoverPaciente(1);
+
+            //Finaliza o sistema pressionando a tecla enter
+            Console.ReadLine();
         }
     }
 }

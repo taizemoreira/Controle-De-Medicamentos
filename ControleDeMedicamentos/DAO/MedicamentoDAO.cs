@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ControleDeMedicamentos.Negocios.MeuProjeto;
+using ControleDeMedicamentos.Negocios;
+
 
 namespace ControleDeMedicamentos.DAO
 {
-    internal class ControladordeEstoque
+    internal class MedicamentoDAO
     {
+        public MedicamentoDAO()
+        {
+            
+        }
     }
 }

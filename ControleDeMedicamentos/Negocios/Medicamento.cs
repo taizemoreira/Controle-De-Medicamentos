@@ -1,9 +1,4 @@
 ﻿using ControleDeMedicamentos.Negocios.MeuProjeto;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ControleDeMedicamentos.Negocios
 {
@@ -14,7 +9,7 @@ namespace ControleDeMedicamentos.Negocios
         public int IdMedicamento { get; set; }  
         public string? NomeMedicamento { get; set; }
         public string? DescricaoMedicamento { get; set; }
-        public int QuantidadeMedicamentoDisponivel { get; set; }
+        public int QuantidadeMedicamentoDisponivel { get; set; } = 0;
         public List<Requisicao> HistoricoDeRequisicoes { get; set; }
         public int QuantidadeDeRequisicoes { get; set; }
         public int QuantidadeLimiteMedicamento { get; set; }
@@ -34,35 +29,35 @@ namespace ControleDeMedicamentos.Negocios
 
         public void AdicionarRequisicao(Requisicao requisicao)
         {
-            HistoricoDeRequisicoes.Add(requisicao);
-            QuantidadeDeRequisicoes++;
+            this.HistoricoDeRequisicoes.Add(requisicao);
+            this.QuantidadeDeRequisicoes++;
         }
 
         public void AtualizarQuantidadeMedicamento(int quantidade)
         {
-            QuantidadeMedicamentoDisponivel += quantidade;
+            this.QuantidadeMedicamentoDisponivel += quantidade;
         }
 
         public void AtualizarFornecedorMedicamento(Fornecedor fornecedor)
         {
-            FornecedorMedicamento = fornecedor;
+            this.FornecedorMedicamento = fornecedor;
         }
 
         public void AtualizarQuantidadeLimiteMedicamento(int quantidadeLimite)
         {
-            QuantidadeLimiteMedicamento = quantidadeLimite;
+            this.QuantidadeLimiteMedicamento = quantidadeLimite;
         }
 
         public void RemoverRequisicao(Requisicao requisicao)
         {
-            HistoricoDeRequisicoes.Remove(requisicao);
-            QuantidadeDeRequisicoes--;
+            this.HistoricoDeRequisicoes.Remove(requisicao);
+            this.QuantidadeDeRequisicoes--;
         }
 
         // Método para verificar se o medicamento está em falta
         public bool EstaEmFalta()
         {
-            return QuantidadeDeRequisicoes < QuantidadeLimiteMedicamento;
+            return this.QuantidadeDeRequisicoes < this.QuantidadeLimiteMedicamento;
         }
     }
 }

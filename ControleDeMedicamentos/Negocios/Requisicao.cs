@@ -30,13 +30,6 @@ namespace ControleDeMedicamentos.Negocios
         {
 
         }
-
-        public void RegistrarRequisicao(Requisicao requisicao)
-        {
-            requisicao.MedicamentoRequisitado.HistoricoDeRequisicoes.Add(requisicao);
-            requisicao.MedicamentoRequisitado.QuantidadeDeRequisicoes += 1;
-            listaRequisicoes.Add(requisicao);
-        }
     }
 }
 

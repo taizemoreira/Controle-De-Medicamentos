@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ControleDeMedicamentos.DAO;
 using ControleDeMedicamentos.Negocios.MeuProjeto;
 
 namespace ControleDeMedicamentos.Negocios
@@ -14,46 +10,6 @@ namespace ControleDeMedicamentos.Negocios
         public Estoque(List<Medicamento> listaMedicamentos)
         {
             medicamentos = listaMedicamentos;
-        }
-
-        public void AdicionarMedicamento(Medicamento medicamento)
-        {
-            medicamentos.Add(medicamento);
-        }
-
-        public void AtualizarMedicamento(Medicamento medicamento)
-        {
-            Medicamento medicamentoAtualizar = medicamentos.FirstOrDefault(med => med.NomeMedicamento == medicamento.NomeMedicamento);
-            if (medicamentoAtualizar != null)
-            {
-                medicamentoAtualizar.DescricaoMedicamento = medicamento.DescricaoMedicamento;
-                medicamentoAtualizar.QuantidadeMedicamentoDisponivel = medicamento.QuantidadeMedicamentoDisponivel;
-                medicamentoAtualizar.HistoricoDeRequisicoes = medicamento.HistoricoDeRequisicoes;
-                medicamentoAtualizar.QuantidadeDeRequisicoes = medicamento.QuantidadeDeRequisicoes;
-                medicamentoAtualizar.QuantidadeLimiteMedicamento = medicamento.QuantidadeLimiteMedicamento;
-                medicamentoAtualizar.FornecedorMedicamento = medicamento.FornecedorMedicamento;
-            }
-        }
-
-        public void RemoverMedicamento(Medicamento medicamento)
-        {
-            medicamentos.Remove(medicamento);
-        }
-
-        public void ListarTodosMedicamentos()
-        {
-            Console.WriteLine("Medicamentos em estoque:");
-            foreach (Medicamento medicamento in medicamentos)
-            {
-                Console.WriteLine("-----------------------------------");
-                Console.WriteLine("Medicamento adicionado ao estoque:");
-                Console.WriteLine("Nome: " + medicamento.NomeMedicamento);
-                Console.WriteLine("Descrição: " + medicamento.DescricaoMedicamento);
-                Console.WriteLine("Quantidade disponível: " + medicamento.QuantidadeMedicamentoDisponivel);
-                Console.WriteLine("Fornecedor: " + medicamento.FornecedorMedicamento.NomeFornecedor);
-                Console.WriteLine("Quantidade limite: " + medicamento.QuantidadeLimiteMedicamento);
-                Console.WriteLine("-----------------------------------");
-            }
         }
 
         public List<Medicamento> ListarMedicamentosComPoucasQuantidades(int quantidadeMinima)
@@ -79,18 +35,38 @@ namespace ControleDeMedicamentos.Negocios
                     totalMedicamentoEmFalta++;
                 }
             }
-
             Console.WriteLine("Total de medicamentos em falta encontrados: " + totalMedicamentoEmFalta);
+            Console.WriteLine("-----------------------------------");
         }
 
         public void SolicitarReposicaoMedicamento(Medicamento medicamento, Fornecedor fornecedor)
         {
             medicamento.FornecedorMedicamento = fornecedor;
             // lógica para enviar solicitação de reposição para o fornecedor
-            Requisicao requisicao = new Requisicao();
-            Requisicao solicitacaoDeRequisicao = new Requisicao(medicamento, null, fornecedor, "Solicitação de Medicamento");
-            requisicao.RegistrarRequisicao(solicitacaoDeRequisicao);
 
+            // Cria a lista de requisições para utilizar
+            List<Requisicao> listaDeMedicamentos = new List<Requisicao>();
+
+            RequisicaoDAO requisicaoDAO = new RequisicaoDAO(listaDeMedicamentos);
+            Requisicao solicitacaoDeRequisicao = new Requisicao(medicamento, null, fornecedor, "Solicitação de Medicamento");
+            requisicaoDAO.RegistrarRequisicao(solicitacaoDeRequisicao);
+
+        }
+
+        public void ListarTodosMedicamentos()
+        {
+            Console.WriteLine("Medicamentos em estoque:");
+            foreach (Medicamento medicamento in medicamentos)
+            {
+                Console.WriteLine("-----------------------------------");
+                Console.WriteLine("Medicamento adicionado ao estoque:");
+                Console.WriteLine("Nome: " + medicamento.NomeMedicamento);
+                Console.WriteLine("Descrição: " + medicamento.DescricaoMedicamento);
+                Console.WriteLine("Quantidade disponível: " + medicamento.QuantidadeMedicamentoDisponivel);
+                Console.WriteLine("Fornecedor: " + medicamento.FornecedorMedicamento.NomeFornecedor);
+                Console.WriteLine("Quantidade limite: " + medicamento.QuantidadeLimiteMedicamento);
+                Console.WriteLine("-----------------------------------");
+            }
         }
     }
 }
